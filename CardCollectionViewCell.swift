@@ -12,10 +12,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     var card:Card?
     
     func setCard(_ card:Card) {
-        
-        //Keep track of the card that gets passed in
         self.card = card
-        // If the card has been matched then make the image views invisible
         if card.isMatched == true {
             backImageView.alpha = 0
             frontImageView.alpha = 0
@@ -23,7 +20,6 @@ class CardCollectionViewCell: UICollectionViewCell {
             return
         }
         else{
-            //If the card hasn't been matched make the image views visible
             backImageView.alpha = 1
             frontImageView.alpha = 1
         }
@@ -50,11 +46,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     func remove() {
         
-        //Removes both imageViews from being visible
         backImageView.alpha = 0
-        
-        //Animate it
-        
         
         UIView.animate(withDuration: 0.3, delay: 0.5, options: .curveEaseOut, animations: {
             self.frontImageView.alpha = 0
